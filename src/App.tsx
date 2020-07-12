@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { fetchQuizQuestions } from './API';
 import QuestionCard from './components/QuestionCard';
 import { QuestionState, Difficulty } from './API';
-
-type AnswerObject = {
+import {GlobalStyle} from './App.styles';
+export type AnswerObject = {
   question: string,
   answer: string,
   correct: boolean,
@@ -60,14 +60,17 @@ const App = () => {
     }
   }
 
-  return (<div className='App'>
+  return (
+  <>
+  <GlobalStyle/>
+  <div className='App'>
 
     <h1> React Quiz</h1>
     {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (<button className="start" onClick={startTrivia}>
       Start
     </button>) : null}
 
-    {!gameOver ? <p className="score">Score:</p> : null}
+    {!gameOver ? <p className="score">Score: {score}</p> : null}
     {loading && <p>Loading Questions....</p>}
     {!loading && !gameOver && (<QuestionCard
       questionNr={number + 1}
@@ -86,7 +89,8 @@ const App = () => {
           Next Question
     </button>
       ) : null}
-  </div>);
+  </div>
+  </>);
 }
 
 export default App;
