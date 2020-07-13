@@ -16,3 +16,6 @@ https://opentdb.com/api_config.php
 ### leve of difficulty
 at this moment it is EASY, you can even change to Medium or HARD on code level.
 
+
+### working quiz looks like
+![alt text](https://github.com/karri-sek/java-react-webapp/blob/master/src/images/quiz.jpg?raw=true)
